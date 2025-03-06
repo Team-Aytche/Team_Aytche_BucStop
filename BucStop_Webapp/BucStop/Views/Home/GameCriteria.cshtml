@@ -10,8 +10,9 @@
 <p>In order to have your game listed on BucStop, your game needs to meet certain criteria: </p>
 
 <ul>
-    <li>Must have a name which is not offensive and is less than 50 characters long</li>
-    <li>Must have controls which are able to be used on both PC and mobile</li>
+    <li>This is where Game Criteria will go</li>
+    <!-- <li>Must have a name which is not offensive and is less than 50 characters long</li>
+     <li>Must have controls which are able to be used on both PC and mobile</li>
 
         <ul>
             <li>Recommendation is to have it use the arrow keys, as the site will already map swipes to the keys</li>
@@ -32,8 +33,58 @@
     <li>The file size of the game and all other necessary materials (including images, sounds, et cetera) should not exceed 10MB</li>
     <li>The canvas of the game must be within 640 px by 640 px</li>
     <li>Must not collect user data outside of the bare minimum to save progress in the game</li>
-    <li>Any non-javascript files necessary for the game to run must be included in a folder</li>
+    <li>Any non-javascript files necessary for the game to run must be included in a folder</li> -->
 </ul>
 <hr>
-<h1>Add your game</h1>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxu3kg1Cm7Sc7wogaYuRNzbL8fafdTQ9I_nyuCIttKzlg63Q/viewform?embedded=true" width="640" height="1201" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<h1>Submit your game</h1>
+<form>
+    <label>your Name</label>
+    <input type="text" id="name" name="name">
+    <br><br>
+    <label>your ETSU Email</label>
+    <input type="text" id="etsu_email" name="etsu_email">
+    <br><br>
+    <label>Game Title</label>
+    <input type="text" id="game_title" name="game_title">
+    <br><br>
+    <label>Game Description</label>
+    <input type="text" id="game_desc" name="game_desc">>
+    <br><br>
+    <!-- <label> Brief "How to Play" For The Game</label>
+    <input type="text" id="how_to_play" name="how_to_play" style="width: 90px; height: 390px"> -->
+    <div>
+        <label for="HowToPlay">How to Play (Max 500 Characters):</label><br />
+        <textarea id="HowToPlay" name="HowToPlay" maxlength="500"></textarea>
+    </div>
+    <br><br>
+    <label>Please enter a valid GitHub link (e.g., https://github.com/yourusername/yourrepo)</label>
+    <input type="url" id="GitHubLink" name="GitHubLink" pattern="https://github\.com/.*" title="Please enter a valid GitHub link (e.g., https://github.com/yourusername/yourrepo)">
+    <br><br>
+    <button style="background: #FFC72C; border-radius:4px">Submit</button>
+</form>
+
+<div id="successMessage" style="display: none; color: green;">
+    Submission Successful!
+</div>
+
+<script>
+    function showSuccess() {
+        // Basic client-side validation
+        const howToPlay = document.getElementById('HowToPlay').value;
+        const gitHubLink = document.getElementById('GitHubLink').value;
+
+        if (!howToPlay || !gitHubLink) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // GitHub link validation
+        const githubRegex = /^https:\/\/github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+(\/.*)?$/;
+        if (!githubRegex.test(gitHubLink)) {
+            alert("Please enter a valid GitHub link.");
+            return;
+        }
+
+        document.getElementById('successMessage').style.display = "block";
+    }
+</script>
