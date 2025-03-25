@@ -30,8 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6a8e77f752ca4833a577c3be9b71d189 }}/index.docker.io/team-aytche/bucstop:${{ github.sha }}
-        file: ./Dockerfile
+        tags: ${{ secrets.AzureAppService_ContainerUsername_6a8e77f752ca4833a577c3be9b71d189 }}/team-aytche/bucstop:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
