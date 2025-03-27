@@ -1,41 +1,48 @@
-
-﻿@{
+@{
     ViewData["Title"] = "Game Criteria";
 }
 
-<!-- Page detailing what criteria a game should meet to be added to the site.-->
 
-<h1>@ViewData["Game Submission "]</h1>
 
 <!-- the game criteria--!>
 <p>In order to have your game listed on BucStop, it must meet the following criteria: The game must have a name that is not offensive and is less than 50 characters long. It must have controls that work on both PC and mobile, with a recommendation to use arrow keys since the site maps swipes to those keys. The game must not contain any offensive material, including expletives, gore, excessive violence, controlled substances, suggestive content, racially insensitive material, illegal content, or anything that could give a negative impression of the school. It must be written in JavaScript, contain no advertisements, and must not include any software that could be deemed malicious. The game must avoid excessive flashing lights or loud sounds, must not infringe on any copyrighted material, and must not exceed a total file size of 10MB, including images, sounds, and other assets. The game canvas must be within 640px by 640px. Additionally, it must not collect user data beyond the bare minimum required to save progress, and any non-JavaScript files necessary for the game to run must be included in a folder.</p>
 
 <hr>
+
 <h1>Submit your game</h1>
+
 <form>
-    <label>your Name</label>
-    <input type="text" id="name" name="name">
+    <label>Your Name</label><br> <!--Added br after labels to fix spacing-->
+    <input type="text" id="name" name="name" required>
     <br><br>
-    <label>your ETSU Email</label>
-    <input type="text" id="etsu_email" name="etsu_email">
+
+    <label>Game Title</label><br>
+    <input type="text" id="game_title" name="game_title" required>
     <br><br>
-    <label>Game Title</label>
-    <input type="text" id="game_title" name="game_title">
-    <br><br>
-    <label>Game Description</label>
-    <input type="text" id="game_desc" name="game_desc">>
-    <br><br>
-    <!-- <label> Brief "How to Play" For The Game</label>
-    <input type="text" id="how_to_play" name="how_to_play" style="width: 90px; height: 390px"> -->
+
+    <div>
+        <label for="GameDescrip">Game Description (Max 500 Characters):</label><br />
+        <textarea id="GameDescrip" name="GameDescrip" maxlength="500"></textarea>
+    </div>
+    <br>
+
     <div>
         <label for="HowToPlay">How to Play (Max 500 Characters):</label><br />
         <textarea id="HowToPlay" name="HowToPlay" maxlength="500"></textarea>
     </div>
+    <br>
+
+    <label>Please enter a valid ETSU Email Prefix (e.g., username):</label><br>
+    <div style="display: flex;">
+        <input type="text" id="ETSUEmailPrefix" name="ETSUEmailPrefix" maxlength="30" required>
+        <span style="color: white;">&#64;etsu.edu</span> </div>
+    <br>
+
+    <label>Please enter a valid GitHub link (e.g., https://github.com/yourusername/yourrepo):</label><br>
+    <input type="url" id="GitHubLink" name="GitHubLink" pattern="https://github\.com/.*" title="Please enter a valid GitHub link (e.g., https://github.com/yourusername/yourrepo)" required>
     <br><br>
-    <label>Please enter a valid GitHub link (e.g., https://github.com/yourusername/yourrepo)</label>
-    <input type="url" id="GitHubLink" name="GitHubLink" pattern="https://github\.com/.*" title="Please enter a valid GitHub link (e.g., https://github.com/yourusername/yourrepo)">
-    <br><br>
-    <button style="background: #FFC72C; border-radius:4px">Submit</button>
+
+    <button type="submit" style="background: #FFC72C; border-radius:4px">Submit</button>
 </form>
 
 <div id="successMessage" style="display: none; color: green;">
@@ -43,23 +50,78 @@
 </div>
 
 <script>
-    function showSuccess() {
-        // Basic client-side validation
-        const howToPlay = document.getElementById('HowToPlay').value;
-        const gitHubLink = document.getElementById('GitHubLink').value;
+    // Email prefix validation (only letters and numbers allowed)
+    document.getElementById("ETSUEmailPrefix").addEventListener("input", function () {
+        const prefixInput = document.getElementById("ETSUEmailPrefix");
+        const value = prefixInput.value;
+        const validPrefix = /^[a-zA-Z0-9]+$/; // Only letters and numbers are allowed
 
-        if (!howToPlay || !gitHubLink) {
-            alert("Please fill in all fields.");
-            return;
+        // Validate the prefix
+        if (!validPrefix.test(value)) {
+            prefixInput.setCustomValidity("Please enter a valid ETSU username (letters and numbers only).");
+        } else {
+            prefixInput.setCustomValidity("");
         }
+    });
 
-        // GitHub link validation
-        const githubRegex = /^https:\/\/github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+(\/.*)?$/;
-        if (!githubRegex.test(gitHubLink)) {
-            alert("Please enter a valid GitHub link.");
-            return;
-        }
+    // Form submission handler
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
 
-        document.getElementById('successMessage').style.display = "block";
+    const name = document.getElementById("name").value;
+    const gameTitle = document.getElementById("game_title").value;
+    const gameDescription = document.getElementById("GameDescrip").value;
+    const howToPlay = document.getElementById("HowToPlay").value;
+    const prefixInput = document.getElementById("ETSUEmailPrefix").value;
+    const gitHubLink = document.getElementById("GitHubLink").value;
+
+    // Check if all required fields are filled out
+    if (!name || !gameTitle || !gameDescription || !howToPlay || !prefixInput || !gitHubLink) {
+        alert("Please fill in all fields.");
+        return;
     }
+
+    // Validate the ETSU email prefix (only letters and numbers allowed)
+    if (!/^[a-zA-Z0-9]+$/.test(prefixInput)) {
+        alert("Please enter a valid ETSU username (letters and numbers only).");
+        return;
+    }
+
+    // GitHub link validation
+    const githubRegex = /^https:\/\/github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+(\/.*)?$/;
+    if (!githubRegex.test(gitHubLink)) {
+        alert("Please enter a valid GitHub link.");
+        return;
+    }
+
+    // Format the data as a URL-encoded string
+    const formData = new URLSearchParams({
+        name: name,
+        gameTitle: gameTitle,
+        gameDescrip: gameDescription,
+        howToPlay: howToPlay,
+        ETSUEmailPrefix: prefixInput,
+        GitHubLink: gitHubLink
+    }).toString();
+
+    // Send data to the server
+    fetch('/Home/SubmitGame', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById("successMessage").style.display = "block";
+        } else {
+            alert("Failed to save game submission.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred while submitting the game.");
+    });
+});
 </script>
