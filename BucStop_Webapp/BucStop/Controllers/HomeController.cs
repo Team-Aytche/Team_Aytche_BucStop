@@ -14,7 +14,8 @@ namespace BucStop.Controllers
         private readonly GameService _gameService;
 
         //Path to store game submissions in JSON format
-        private readonly string _jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "game_submissions.json");
+        private readonly string _jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "data", "game_submissions.json");
+
 
         public HomeController(ILogger<HomeController> logger, GameService games)
         {
@@ -152,7 +153,7 @@ namespace BucStop.Controllers
             var jsonData = JsonSerializer.Serialize(submission);
 
             //Save the serialized JSON data to a file (in the current directory)
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "game_submission.json");
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "data", "game_submission.json");
             System.IO.File.WriteAllText(filePath, jsonData);
 
             //Return some response or redirect as necessary
