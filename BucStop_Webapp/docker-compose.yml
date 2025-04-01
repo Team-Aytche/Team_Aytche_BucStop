@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  bucstop:
+    build:
+      context: .
+      dockerfile: BucStop/Dockerfile
+    image: bucstop
+    container_name: bucstopLocal
+    ports:
+      - "8080:80"
+    volumes:
+      - bucstop_json_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  bucstop_json_data:
+    external: true  # Ensures the volume is not deleted when bringing down the container
