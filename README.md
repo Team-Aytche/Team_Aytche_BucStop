@@ -13,7 +13,7 @@ This project also communicates to a microservice with HTTP calls for the game in
 
 [Running Locally](https://github.com/Team-Aytche/Team_Aytche_BucStop/blob/justin-dev/BucStop_Webapp/Docs/Running%20Locally.pdf)
 
-[Deploying](https://github.com/Team-Aytche/Team_Aytche_BucStop/blob/justin-dev/BucStop_Webapp/Docs/Akamai Deployment Doc.pdf)
+[Deploying](https://github.com/Team-Aytche/Team_Aytche_BucStop/blob/justin-dev/BucStop_Webapp/Docs/AkamaiDeploymentDoc.pdf)
 
 [Microservices Document](https://github.com/Team-Aytche/Team_Aytche_BucStop/blob/justin-dev/BucStop_Webapp/Docs/Microservices.pdf)
 
