@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\justi\\Downloads\\Team-Aytche-BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj": {}
+    "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj": {}
   },
   "projects": {
-    "c:\\Users\\justi\\Downloads\\Team-Aytche-BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj": {
+    "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\justi\\Downloads\\Team-Aytche-BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj",
+        "projectUniqueName": "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj",
         "projectName": "BucStop",
-        "projectPath": "c:\\Users\\justi\\Downloads\\Team-Aytche-BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj",
-        "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\justi\\Downloads\\Team-Aytche-BucStop\\BucStop_Webapp\\BucStop\\obj\\",
+        "projectPath": "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj",
+        "packagesPath": "C:\\Users\\kyler\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kyler\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -66,24 +66,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -92,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
