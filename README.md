@@ -11,11 +11,11 @@ This project also communicates to a microservice with HTTP calls for the game in
 ### Backlog Information:
 [Backlog](https://aytche.atlassian.net/jira/software/projects/SCRUM/summary)
 
-[Running Locally](https://github.com/Team-Aytche/Team_Aytche_BucStop/blob/justin-dev/BucStop_Webapp/Docs/Running%20Locally.pdf)
+[Running Locally](https://github.com/Team-Aytche/Team_Aytche_BucStop/prod/BucStop_Webapp/Docs/Running%20Locally.pdf)
 
-[Deploying](https://github.com/Team-Aytche/Team_Aytche_BucStop/blob/justin-dev/BucStop_Webapp/Docs/AkamaiDeploymentDoc.pdf)
+[Deploying](https://github.com/Team-Aytche/Team_Aytche_BucStop/prod/BucStop_Webapp/Docs/AkamaiDeploymentDoc.pdf)
 
-[Microservices Document](https://github.com/Team-Aytche/Team_Aytche_BucStop/blob/justin-dev/BucStop_Webapp/Docs/Microservices.pdf)
+[Microservices Document](https://github.com/Team-Aytche/Team_Aytche_BucStop/prod/BucStop_Webapp/Docs/Microservices.pdf)
 
 ### Project Structure: 
 To understand the project structure, familiarize yourself with the
