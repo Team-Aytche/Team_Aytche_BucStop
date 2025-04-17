@@ -68,3 +68,4 @@ C:\Users\kyler\Source\Repos\Team_Aytche_BucStop\BucStop_Webapp\BucStop\obj\Debug
 C:\Users\kyler\Source\Repos\Team_Aytche_BucStop\BucStop_Webapp\BucStop\obj\Debug\net6.0\BucStop.pdb
 C:\Users\kyler\Source\Repos\Team_Aytche_BucStop\BucStop_Webapp\BucStop\obj\Debug\net6.0\BucStop.genruntimeconfig.cache
 C:\Users\kyler\Source\Repos\Team_Aytche_BucStop\BucStop_Webapp\BucStop\obj\Debug\net6.0\ref\BucStop.dll
+C:\Users\kyler\Source\Repos\Team_Aytche_BucStop\BucStop_Webapp\BucStop\bin\Debug\net6.0\data\api_output.json
