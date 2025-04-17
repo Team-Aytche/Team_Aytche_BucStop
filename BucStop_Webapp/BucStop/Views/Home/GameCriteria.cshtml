@@ -50,78 +50,61 @@
 </div>
 
 <script>
-    // Email prefix validation (only letters and numbers allowed)
-    document.getElementById("ETSUEmailPrefix").addEventListener("input", function () {
-        const prefixInput = document.getElementById("ETSUEmailPrefix");
-        const value = prefixInput.value;
-        const validPrefix = /^[a-zA-Z0-9]+$/; // Only letters and numbers are allowed
+    document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
 
-        // Validate the prefix
-        if (!validPrefix.test(value)) {
-            prefixInput.setCustomValidity("Please enter a valid ETSU username (letters and numbers only).");
-        } else {
-            prefixInput.setCustomValidity("");
+        const name = document.getElementById("name").value;
+        const gameTitle = document.getElementById("game_title").value;
+        const gameDescription = document.getElementById("GameDescrip").value;
+        const howToPlay = document.getElementById("HowToPlay").value;
+        const prefixInput = document.getElementById("ETSUEmailPrefix").value;
+        const gitHubLink = document.getElementById("GitHubLink").value;
+
+        // Validate inputs
+        if (!name || !gameTitle || !gameDescription || !howToPlay || !prefixInput || !gitHubLink) {
+            alert("Please fill in all fields.");
+            return;
         }
-    });
 
-    // Form submission handler
-document.querySelector("form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
-
-    const name = document.getElementById("name").value;
-    const gameTitle = document.getElementById("game_title").value;
-    const gameDescription = document.getElementById("GameDescrip").value;
-    const howToPlay = document.getElementById("HowToPlay").value;
-    const prefixInput = document.getElementById("ETSUEmailPrefix").value;
-    const gitHubLink = document.getElementById("GitHubLink").value;
-
-    // Check if all required fields are filled out
-    if (!name || !gameTitle || !gameDescription || !howToPlay || !prefixInput || !gitHubLink) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    // Validate the ETSU email prefix (only letters and numbers allowed)
-    if (!/^[a-zA-Z0-9]+$/.test(prefixInput)) {
-        alert("Please enter a valid ETSU username (letters and numbers only).");
-        return;
-    }
-
-    // GitHub link validation
-    const githubRegex = /^https:\/\/github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+(\/.*)?$/;
-    if (!githubRegex.test(gitHubLink)) {
-        alert("Please enter a valid GitHub link.");
-        return;
-    }
-
-    // Format the data as a URL-encoded string
-    const formData = new URLSearchParams({
-        name: name,
-        gameTitle: gameTitle,
-        gameDescrip: gameDescription,
-        howToPlay: howToPlay,
-        ETSUEmailPrefix: prefixInput,
-        GitHubLink: gitHubLink
-    }).toString();
-
-    // Send data to the server
-    fetch('/Home/SubmitGame', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            document.getElementById("successMessage").style.display = "block";
-        } else {
-            alert("Failed to save game submission.");
+        if (!/^[a-zA-Z0-9]+$/.test(prefixInput)) {
+            alert("Please enter a valid ETSU username (letters and numbers only).");
+            return;
         }
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("An error occurred while submitting the game.");
+
+        const githubRegex = /^https:\/\/github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+(\/.*)?$/;
+        if (!githubRegex.test(gitHubLink)) {
+            alert("Please enter a valid GitHub link.");
+            return;
+        }
+
+        // Prepare JSON payload
+        const data = {
+            name: name,
+            gameTitle: gameTitle,
+            gameDescrip: gameDescription,
+            howToPlay: howToPlay,
+            ETSUEmailPrefix: prefixInput,
+            GitHubLink: gitHubLink
+        };
+
+        // Send JSON to the API
+        fetch('/api/submission', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById("successMessage").style.display = "block";
+            } else {
+                alert("Failed to save game submission.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred while submitting the game.");
+        });
     });
-});
 </script>
