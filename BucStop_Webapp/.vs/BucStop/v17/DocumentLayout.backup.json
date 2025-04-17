@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F30B091-BD9E-44E5-B075-3930E85838D6}|BucStop\\BucStop.csproj|c:\\users\\kyler\\source\\repos\\team_aytche_bucstop\\bucstop_webapp\\bucstop\\data\\game_submissions_api.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1F30B091-BD9E-44E5-B075-3930E85838D6}|BucStop\\BucStop.csproj|solutionrelative:bucstop\\data\\game_submissions_api.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1F30B091-BD9E-44E5-B075-3930E85838D6}|BucStop\\BucStop.csproj|c:\\users\\kyler\\source\\repos\\team_aytche_bucstop\\bucstop_webapp\\bucstop\\views\\home\\gamecriteria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1F30B091-BD9E-44E5-B075-3930E85838D6}|BucStop\\BucStop.csproj|solutionrelative:bucstop\\views\\home\\gamecriteria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,24 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "game_submissions_api.json",
-              "DocumentMoniker": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\data\\game_submissions_api.json",
-              "RelativeDocumentMoniker": "BucStop\\data\\game_submissions_api.json",
-              "ToolTip": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\data\\game_submissions_api.json",
-              "RelativeToolTip": "BucStop\\data\\game_submissions_api.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-17T12:42:33.994Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SubmissionController.cs",
               "DocumentMoniker": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\Controllers\\SubmissionController.cs",
               "RelativeDocumentMoniker": "BucStop\\Controllers\\SubmissionController.cs",
@@ -60,7 +43,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "BucStop\\Controllers\\HomeController.cs",
@@ -73,20 +56,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameCriteria.cshtml",
               "DocumentMoniker": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\Views\\Home\\GameCriteria.cshtml",
               "RelativeDocumentMoniker": "BucStop\\Views\\Home\\GameCriteria.cshtml",
               "ToolTip": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\Views\\Home\\GameCriteria.cshtml",
               "RelativeToolTip": "BucStop\\Views\\Home\\GameCriteria.cshtml",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAkwG4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAgwG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-17T12:03:22.78Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\Program.cs",
               "RelativeDocumentMoniker": "BucStop\\Program.cs",

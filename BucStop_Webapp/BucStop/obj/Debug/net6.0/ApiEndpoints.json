@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "ContainingType": "BucStop.Controllers.SubmissionController",
+    "Method": "SubmitGame",
+    "RelativePath": "api/Submission",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "submission",
+        "Type": "BucStop.Controllers.GameSubmission",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BucStop.Controllers.SubmissionController",
+    "Method": "HelloWorld",
+    "RelativePath": "api/Submission/hello",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
