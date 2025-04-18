@@ -6,15 +6,11 @@ namespace GameSubmission.Controllers
     [ApiController]
     public class TestController : Controller
     {
-        public IActionResult Index()
+        [HttpPost("exhello")]
+        public IActionResult ExternalHelloWorld() 
         {
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult Get() 
-        {
-            return Ok(new { message = $"Game Submission API Test Message..." });
+            var result = new { message = "Hello from the external API!"};
+            return Ok(result);
         }
     }
 }
