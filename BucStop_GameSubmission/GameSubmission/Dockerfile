@@ -3,8 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy the .csproj and restore dependencies
-COPY ["GameSubmission.csproj", "GameSubMicroService/"]
-WORKDIR "/src/GameSubMicroService"
+COPY GameSubmission.csproj ./
 RUN dotnet restore "GameSubmission.csproj"
 
 # Copy everything and build
@@ -19,8 +18,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Expose port (optional, but recommended)
 EXPOSE 4001
 
-# Run the application
 ENTRYPOINT ["dotnet", "GameSubmission.dll"]
