@@ -23,6 +23,8 @@ builder.Host.UseSerilog();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpClient();
+
 var provider=builder.Services.BuildServiceProvider();
 var configuration=provider.GetRequiredService<IConfiguration>();
 

@@ -28,7 +28,6 @@ C:\Users\kyler\source\repos\Team_Aytche_BucStop\BucStop_GameSubmission\GameSubmi
 C:\Users\kyler\source\repos\Team_Aytche_BucStop\BucStop_GameSubmission\GameSubmission\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.GameSubmission.props
 C:\Users\kyler\source\repos\Team_Aytche_BucStop\BucStop_GameSubmission\GameSubmission\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.GameSubmission.props
 C:\Users\kyler\source\repos\Team_Aytche_BucStop\BucStop_GameSubmission\GameSubmission\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\kyler\source\repos\Team_Aytche_BucStop\BucStop_GameSubmission\GameSubmission\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\kyler\source\repos\Team_Aytche_BucStop\BucStop_GameSubmission\GameSubmission\obj\Debug\net8.0\GameSubm.873395EB.Up2Date
 C:\Users\kyler\source\repos\Team_Aytche_BucStop\BucStop_GameSubmission\GameSubmission\obj\Debug\net8.0\GameSubmission.dll
 C:\Users\kyler\source\repos\Team_Aytche_BucStop\BucStop_GameSubmission\GameSubmission\obj\Debug\net8.0\refint\GameSubmission.dll

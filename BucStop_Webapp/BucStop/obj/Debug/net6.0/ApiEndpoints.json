@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "BucStop.Controllers.SubmissionController",
+    "Method": "CallExternalHello",
+    "RelativePath": "api/Submission/external-hello",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BucStop.Controllers.SubmissionController",
     "Method": "HelloWorld",
     "RelativePath": "api/Submission/hello",
     "HttpMethod": "POST",

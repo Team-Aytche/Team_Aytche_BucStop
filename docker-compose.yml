@@ -1,0 +1,33 @@
+# version: "3.8"
+services:
+  bucstop:
+    build:
+      context: ./BucStop_Webapp
+      dockerfile: BucStop/Dockerfile
+
+    image: bucstop
+    container_name: bucstop_webapp
+    ports:
+      - "8080:80"
+    volumes:
+      - bucstop_json_data:/app/data
+    restart: unless-stopped
+
+  bucstop_gamesubmission:
+    build:
+      context: ./BucStop_GameSubmission/GameSubmission
+      dockerfile: Dockerfile
+    image: bucstop_gamesubmission
+    container_name: bucstopGameSubmission
+    ports:
+      - "4001:40"
+    volumes:
+      - bucstop_json_data:/app/data
+    depends_on:
+      - bucstop
+    restart: unless-stopped
+
+
+volumes:
+  bucstop_json_data:
+    external: true  # Ensures the volume is not deleted when bringing down the container
