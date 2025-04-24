@@ -1,24 +1,10 @@
 using BucStop;
-using Serilog;
-using Serilog.Events;
-
 
 /*
  * This is the base program which starts the project.
  */
 
 var builder = WebApplication.CreateBuilder(args);
-
-//Serilog logging
-Log.Logger = new LoggerConfiguration()
-        .MinimumLevel.Debug()
-        .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-        .Enrich.FromLogContext()
-        .WriteTo.File("Logs/bucstop-.log", rollingInterval: RollingInterval.Day, retainedFileCountLimit: 10, fileSizeLimitBytes: 10485760, rollOnFileSizeLimit: true)
-        .WriteTo.Console()
-        .CreateLogger();
-
-builder.Host.UseSerilog();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
