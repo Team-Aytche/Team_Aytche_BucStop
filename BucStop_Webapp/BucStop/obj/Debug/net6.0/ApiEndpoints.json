@@ -34,5 +34,21 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BucStop.Controllers.SubmissionController",
+    "Method": "SubmitGameToExternalApi",
+    "RelativePath": "api/Submission/submit-external",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "submission",
+        "Type": "BucStop.Controllers.GameSubmission",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
