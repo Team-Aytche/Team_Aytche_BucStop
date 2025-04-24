@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GameSubmission.Controllers
 {
@@ -6,15 +6,18 @@ namespace GameSubmission.Controllers
     [ApiController]
     public class TestController : Controller
     {
-        public IActionResult Index()
+        [HttpPost("exhello")]
+        public IActionResult ExternalHelloWorld() 
         {
-            return View();
+            var result = new { message = "Hello from the external API!" };
+            return Ok(result);
         }
 
         [HttpGet]
         public IActionResult Get() 
         {
-            return Ok(new { message = $"Game Submission API Test Message..." });
+            return Ok(new { message = "Game Submission API Test Message..." });
         }
     }
 }
+

@@ -12,6 +12,46 @@ namespace BucStop.Controllers
         private readonly string _jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "data", "game_submissions_api.json");
         private readonly string _helloFilePath = Path.Combine(Directory.GetCurrentDirectory(), "data", "hello_world.json");
 
+        private readonly IHttpClientFactory _httpClientFactory;
+
+        public SubmissionController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClientFactory = httpClientFactory;
+        }
+
+        [HttpPost("external-hello")]
+        public async Task<IActionResult> CallExternalHello()
+        {
+            var client = _httpClientFactory.CreateClient();
+
+            //The preset URL for the external API call
+            var url = "http://localhost:7777/api/Test/exhello";
+
+            try 
+            {
+                var response = await client.PostAsync(url, null);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return StatusCode((int)response.StatusCode, "Failed to call external Hello World.");
+                }
+
+                var content = await response.Content.ReadAsStringAsync();
+
+                var externalHelloResponsePath = Path.Combine(Directory.GetCurrentDirectory(), "data", "external_hello_response.json");
+                System.IO.File.WriteAllText(externalHelloResponsePath, content);
+
+                return Ok(new { status = "success", data = content });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
+
+
+
         // --- Keep this! Just for testing ---
         [HttpPost("hello")]
         public IActionResult HelloWorld()
