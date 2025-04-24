@@ -1,0 +1,10 @@
+[
+  {
+    "Name": "Test Submitter",
+    "GameTitle": "Test Game",
+    "GameDescrip": "Test Description",
+    "HowToPlay": "Test How To Play.",
+    "ETSUEmailPrefix": "fakeemail@etsu.edu",
+    "GitHubLink": "https://github.com/test/test"
+  }
+]
