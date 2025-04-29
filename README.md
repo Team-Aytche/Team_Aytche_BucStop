@@ -44,3 +44,6 @@ BucStop folder.
 	* wwwroot
 		* This folder contains the resources used by the project, 
 			including images, the javascript games, the icons, etc.
+
+NOTE:
+AS OF 29APR, the submission works local, but when deployed, does not function. REVERTING to 24APR will allow submission during deployment!!!
