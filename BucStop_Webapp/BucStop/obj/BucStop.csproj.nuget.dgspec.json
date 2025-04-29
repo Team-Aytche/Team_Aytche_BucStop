@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj": {}
+    "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj": {
+    "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj",
+        "projectUniqueName": "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj",
         "projectName": "BucStop",
-        "projectPath": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj",
+        "projectPath": "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\BucStop.csproj",
         "packagesPath": "C:\\Users\\kyler\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kyler\\source\\repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\obj\\",
+        "outputPath": "C:\\Users\\kyler\\Source\\Repos\\Team_Aytche_BucStop\\BucStop_Webapp\\BucStop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
