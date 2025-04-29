@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
+using System.Net.Http.Json;
 
 namespace BucStop.Controllers
 {
@@ -49,9 +50,6 @@ namespace BucStop.Controllers
             }
         }
 
-
-
-
         // --- Keep this! Just for testing ---
         [HttpPost("hello")]
         public IActionResult HelloWorld()
@@ -98,6 +96,28 @@ namespace BucStop.Controllers
             System.IO.File.WriteAllText(_jsonFilePath, updatedJson);
 
             return Ok(new { status = "success", message = "Game submission saved." });
+        }
+
+
+        [HttpPost("submit-external")]
+        public async Task<IActionResult> SubmitGameToExternalApi([FromBody] GameSubmission submission)
+        {
+            if (submission == null)
+            {
+                return BadRequest("Invalid submission.");
+            }
+
+            var apiUrl = "http://localhost:7777/api/test/submit-external"; // Update as needed
+
+            using var httpClient = new HttpClient();
+            var response = await httpClient.PostAsJsonAsync(apiUrl, submission);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return StatusCode((int)response.StatusCode, "Failed to send to external API.");
+            }
+
+            return Ok(new { status = "success", message = "Submission sent to external API." });
         }
     }
 
